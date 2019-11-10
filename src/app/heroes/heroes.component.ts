@@ -23,7 +23,7 @@ export class HeroesComponent implements OnInit {
   }
 // Function to retrieve heroes from the services
 getHeroes(): void {
-  this.heroes = this.heroService.getHeroes();
+  this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
 }
 
   constructor(private heroService: HeroService) { }
